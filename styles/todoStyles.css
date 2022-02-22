@@ -38,6 +38,21 @@ button {
   border-top: solid .15rem #9452ff;
   border-right: solid .25rem #7f2fff;
   border-bottom: solid .5rem #4101a8;
+  -webkit-transition: background-color .25s;
+  transition: background-color .25s;
+}
+
+button:hover {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 800;
+  background-color: #5300da;
+  color: white;
+  padding: 1rem 2.5rem 1rem 2.5rem;
+  border-radius: .5rem;
+  border-top: solid .15rem #a46cff;
+  border-right: solid .25rem #8d45ff;
+  border-bottom: solid .5rem #4101a8;
 }
 
 .headerSection {
