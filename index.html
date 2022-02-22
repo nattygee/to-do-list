@@ -4,45 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/todoStyles.css">
+    <title>A New To Do List</title>
 </head>
 <body>
-    <div class="section">
+    <!--⭐⭐⭐⭐⭐ ----------------------------------------->
+    <div class="headerSection">
+        <div class="generalInfo">
+            <h6>ToDo List</h6>
+            <h1>Another ToDo List</h1>
+        </div>  
+    </div>
+
+    <!--⭐⭐⭐⭐⭐ ----------------------------------------->
+    <div class="bodySection">
         <!--🚩🚩🚩🚩🚩 ----------------------------------------->
-        <div class="headerSection">
-            <h6>started 02/20/'22</h6>
-        </div>
-        <!--🚩🚩🚩🚩🚩 ----------------------------------------->
-        <div class="highLevelInfo">
-            
-            <!--🟦🟦🟦 ---->
-            <div class="generalInfo">
-                <h6>ToDo List</h6>
-                <h1>Another List</h1>
-                <p>Lists have traditionally not worked well for me. But what if it was a little more fun to use?</p>
-            </div>
+        <div class="infoSection">
 
             <!--🟦🟦🟦 ---->
             <div class="listItemInput">
                 <h3>Add a small task</h3>
                 <p>Science says it's more likely that you'll complete a task when it seems like a manageable size</p>
-                <input type="text" name="" id="taskTitle">
-                <input type="text" name="" id="taskDescription">
-                <button>Add Task</button>
+                <div class="taskInputs">
+                    <h6>Task Title</h6>
+                    <input type="text" name="" id="taskTitle">
+                    <h6>Task Description</h6>
+                    <input type="text" name="" id="taskDescription">
+                    <button id="PrimaryCTA">Add Task</button>
+                </div>
             </div>
 
             <!--🟦🟦🟦 ---->
             <div class="historyStats">
                 <h3>Stats History</h3>
-                <p>there are none yet, but once we program and start adding tasks, your all-time stats will appear here</p>
+                
                 <!-- need to think about how I'll format this section. Ex - table, list, or a grid of some type?-->
             </div>
         </div>
 
         <!--🚩🚩🚩🚩🚩 ----------------------------------------->
-        <div class="theList">
-            <h3>Find your tasks here</h3>
-            <p>there are none yet, but once we program and start adding tasks, they'll appear here</p>
+        <div class="listSection">
+            <div class="theList">
+                <h3>Tasks</h3>
+            </div>
         </div>
     </div>
 </body>
