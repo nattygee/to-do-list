@@ -55,6 +55,17 @@ button:hover {
   border-bottom: solid .5rem #4101a8;
 }
 
+#taskDescription {
+  height: 10vh;
+  padding-bottom: 1rem;
+  background-color: #161616;
+  font-size: 1rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  color: lightslategrey;
+  border-radius: .3rem;
+}
+
 .headerSection {
   width: 100%;
   text-align: left;
