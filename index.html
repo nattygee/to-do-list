@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/todoStyles.css">
+    <script src="scripts/toDoScript.js"></script>
+    
     <title>A New To Do List</title>
 </head>
 <body>
@@ -27,10 +29,10 @@
                 <p>Science says it's more likely that you'll complete a task when it seems like a manageable size</p>
                 <div class="taskInputs">
                     <h6>Task Title</h6>
-                    <input type="text" name="" id="taskTitle">
+                    <input type="text" name="" id="taskTitle" placeholder="Enter a task name">
                     <h6>Task Description</h6>
-                    <textarea name="" id="taskDescription" cols="" rows="4"></textarea>
-                    <button id="PrimaryCTA">Add Task</button>
+                    <textarea name="" id="taskDescription" cols="" rows="4" placeholder="Describe your task"></textarea>
+                    <button id="primaryCTA">Add Task</button>
                 </div>
             </div>
 
@@ -46,6 +48,10 @@
         <div class="listSection">
             <div class="theList">
                 <h3>Tasks</h3>
+                <div class="taskItem" style="display: none;">
+                    <input type="text" class="taskTitleSent">
+                    <textarea name="" id="" cols="" rows="4" class="tastDescriptionSent"></textarea>
+                </div>
             </div>
         </div>
     </div>
