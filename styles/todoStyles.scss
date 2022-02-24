@@ -25,7 +25,7 @@ p {
 
 
 body {
-    background-color: rgb(31, 31, 31);
+    background-color: #1f1f1f;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -58,7 +58,12 @@ button:hover {
 }
 
 #taskTitle {
+    font-family: monospace;
+    color: #DFDF1E
+}
 
+#taskTitle::placeholder {
+    color: #525252;
 }
 
 #taskDescription {
@@ -67,8 +72,30 @@ button:hover {
     font-size: 1rem;
     padding: 1rem;
     margin-bottom: 2rem;
-    color: lightslategrey;
+    color: #DFDF1E;
     border-radius: .3rem;
+}
+
+#taskDescription::placeholder {
+    color: #525252;
+}
+
+#titleSentInput {
+    flex-basis: 1;
+    background-color: #1f1f1f;
+    font-size: 10.72px;
+    font-weight: 700;
+    color: lightslategrey;
+    margin-bottom: .15rem;
+}
+#descriptionSentInput {
+    flex-basis: 1;
+    background-color: #1f1f1f;
+    font-family: monospace;
+    font-size: 1rem;
+    color: #DFDF1E;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .headerSection {
@@ -99,7 +126,10 @@ button:hover {
 
 .listSection {
     padding: 1rem;
+    display: flex;
+    flex-grow: 1;
     flex-basis: 50%;
+    flex-direction: row;
 }
 
 .generalInfo {
@@ -147,4 +177,9 @@ button:hover {
     flex-grow: 1;
     padding: 1rem;
     color: #fff;
+}
+
+.taskItem {
+    display: flex;
+    flex-direction: column;
 }

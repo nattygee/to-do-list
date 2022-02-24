@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/todoStyles.css">
-    <script src="scripts/toDoScript.js"></script>
+    
     
     <title>A New To Do List</title>
 </head>
@@ -13,8 +13,8 @@
     <!--⭐⭐⭐⭐⭐ ----------------------------------------->
     <div class="headerSection">
         <div class="generalInfo">
-            <h6>ToDo List</h6>
-            <h1>Another ToDo List</h1>
+            <h6>Another ToDo List</h6>
+            <!--<h1>Another ToDo List</h1>-->
         </div>  
     </div>
 
@@ -29,7 +29,7 @@
                 <p>Science says it's more likely that you'll complete a task when it seems like a manageable size</p>
                 <div class="taskInputs">
                     <h6>Task Title</h6>
-                    <input type="text" name="" id="taskTitle" placeholder="Enter a task name">
+                    <input type="text" name="" class="taskTitle" id="taskTitle" placeholder="Enter a task name">
                     <h6>Task Description</h6>
                     <textarea name="" id="taskDescription" cols="" rows="4" placeholder="Describe your task"></textarea>
                     <button id="primaryCTA">Add Task</button>
@@ -48,12 +48,14 @@
         <div class="listSection">
             <div class="theList">
                 <h3>Tasks</h3>
-                <div class="taskItem" style="display: none;">
-                    <input type="text" class="taskTitleSent">
-                    <textarea name="" id="" cols="" rows="4" class="tastDescriptionSent"></textarea>
+                <div class="taskItem">
+                    <input type="text" id="titleSentInput">
+                    <textarea name="" cols="" rows="4" id="descriptionSentInput"></textarea>
                 </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+// put this down here because i was running into a "cannot read properties of null" error - apparently it was just an ordering issue from when the script file was at the top...
+<script src="scripts/toDoScript.js"></script>
