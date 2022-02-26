@@ -104,7 +104,7 @@ button:hover {
   color: #525252;
 }
 
-#titleSentInput {
+.titleSentStyle {
   -ms-flex-preferred-size: 1;
       flex-basis: 1;
   background-color: #1f1f1f;

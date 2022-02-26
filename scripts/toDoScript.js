@@ -8,7 +8,6 @@ var taskDescriptionSent = document.getElementById('descriptionSentInput');
 
 submitBtn.addEventListener('click', () => {
     createTask();
-    sendTaskOver();
 });
 
     //🏁 creating a brand new task from scratch in the task column
@@ -22,15 +21,20 @@ function createTask() {
     // actually attaching that content to the new element
     newTaskTitle.appendChild(taskTitleContent);
 
+    //add styling to divs
+    newTaskTitle.classList.add('titleSentStyle');
+
     // placing newly created div on the actual page
-    const parentDiv = taskListDiv.parentNode;
-    parentDiv.insertBefore(newTaskTitle, taskListDiv);
+        // automatically appends to bottom of body div 👉 document.body.appendChild(newTaskTitle);
+        // appends to targeted div 👇
+    taskListDiv.appendChild(newTaskTitle);    
 
-
-    console.log(newTaskText);
+    //clear task input fields
+    taskTitle.value = null;
+    taskDescription.value = null;
 }
-
-function sendTaskOver() {
+// original way i tried to manually display tasks👇 (found out after that I needed to do it dynamically, like the above ☝️)
+/*function sendTaskOver() {
     //translate task input text to task list div
     taskTitleSent.value = taskTitle.value;
     taskDescriptionSent.value = taskDescription.value;
@@ -38,4 +42,4 @@ function sendTaskOver() {
     //clear task input fields
     taskTitle.value = null;
     taskDescription.value = null;
-}
+}*/
