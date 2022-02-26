@@ -6,9 +6,24 @@ var taskListDiv = document.getElementById('theListSide');
 var taskTitleSent = document.getElementById('titleSentInput');
 var taskDescriptionSent = document.getElementById('descriptionSentInput');
 
+// 🥳 this is pretty helpful for finding out the 'key' values of each keyboard key/variation
+window.addEventListener('keydown', x => {
+    console.log(x);
+})
+
+//listen for CTA button press
 submitBtn.addEventListener('click', () => {
     createTask();
+    console.log('offs');
 });
+
+
+// hit enter to submit task to listSide
+function enterForTask(e) {
+    if (e.key === 'Enter') {
+        submitBtn.click();
+    } 
+}
 
     //🏁 creating a brand new task from scratch in the task column
 function createTask() {
@@ -32,6 +47,7 @@ function createTask() {
     //clear task input fields
     taskTitle.value = null;
     taskDescription.value = null;
+    console.log('enter key worked');
 }
 // original way i tried to manually display tasks👇 (found out after that I needed to do it dynamically, like the above ☝️)
 /*function sendTaskOver() {
