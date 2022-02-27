@@ -21,7 +21,13 @@ submitBtn.addEventListener('click', () => {
 // hit enter to submit task to listSide
 taskTitle.addEventListener('keyup', function(e) {
     if (e.key === 'Enter') {
-        createTask();
+        submitBtn.click();
+    }
+});
+
+taskDescription.addEventListener('keyup', function(e) {
+    if (e.key === 'Enter') {
+        submitBtn.click();
     }
 });
 
