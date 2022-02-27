@@ -38,6 +38,17 @@ taskDescription.addEventListener('keyup', function(e) {
     //🏁 creating a brand new task from scratch in the task column
 function createTask() {
     // creating a new element
+    let taskBox = document.createElement('div');
+    let leftColumn = document.createElement('div');
+    let rightColumn = document.createElement('div');
+    let titleRow = document.createElement('div');
+    let taskBtns = document.createElement('div');
+
+    let taskCheckbox = document.createElement('input');
+    let deleteBtn = document.createElement('button');
+    let editBtn = document.createElement('button');
+    
+
     let newTaskTitle = document.createElement('div');
     let newTaskDescription = document.createElement('div');
     let taskDate = document.createElement('div');
@@ -49,22 +60,46 @@ function createTask() {
 
     
     // actually attaching that content to the new element
+    taskCheckbox.appendChild(leftColumn);
     newTaskTitle.appendChild(taskTitleContent);
     newTaskDescription.appendChild(taskDescriptionContent);
     taskDate.appendChild(dateContent);
 
     //add styling to divs
+    taskBox.classList.add('taskBoxStyle');
+    leftColumn.classList.add('checkBoxColumn');
+    rightColumn.classList.add('contentColumn');
+    titleRow.classList.add('titleRowStyle');
+    taskBtns.classList.add('taskBtnsDiv');
+
     newTaskTitle.classList.add('titleSentStyle');
     newTaskDescription.classList.add('descriptionSentStyle');
     taskDate.classList.add('timeStampStyle');
 
+    taskCheckbox.setAttribute("type", "checkbox");
+    //editBtn.setAttribute("background", "edit");
+    //deleteBtn.setAttribute("value", "delete");
+
+
     // placing newly created div on the actual page
         // automatically appends to bottom of body div 👉 document.body.appendChild(newTaskTitle);
         // appends to targeted div 👇
-    taskListDiv.appendChild(newTaskTitle);    
-    taskListDiv.appendChild(newTaskDescription);    
-    taskListDiv.appendChild(taskDate);    
+    taskListDiv.appendChild(taskBox);
+    
+        taskBox.appendChild(leftColumn);
+        taskBox.appendChild(rightColumn);
 
+            leftColumn.appendChild(taskCheckbox);
+            
+            rightColumn.appendChild(titleRow);    
+                titleRow.appendChild(newTaskTitle);
+                titleRow.appendChild(taskBtns);
+                    taskBtns.appendChild(editBtn);
+                    taskBtns.appendChild(deleteBtn);
+            rightColumn.appendChild(newTaskDescription);    
+            rightColumn.appendChild(taskDate);    
+
+    
     //clear task input fields
     taskTitle.value = null;
     taskDescription.value = null;
