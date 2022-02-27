@@ -6,6 +6,10 @@ var taskListDiv = document.getElementById('theListSide');
 var taskTitleSent = document.getElementById('titleSentInput');
 var taskDescriptionSent = document.getElementById('descriptionSentInput');
 
+var today = new Date();
+var displayDate = today.getMonth() + 1 + '/' + today.getDate() + '/' + today.getFullYear();
+var displayTime = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+
 // 🥳 this is pretty helpful for finding out the 'key' values of each keyboard key/variation
 window.addEventListener('keydown', x => {
     console.log(x);
@@ -36,25 +40,30 @@ function createTask() {
     // creating a new element
     let newTaskTitle = document.createElement('div');
     let newTaskDescription = document.createElement('div');
+    let taskDate = document.createElement('div');
 
     // defining content to attach to the new element
     let taskTitleContent = document.createTextNode(taskTitle.value);
     let taskDescriptionContent = document.createTextNode(taskDescription.value);
+    let dateContent = document.createTextNode(displayDate + ' ' + displayTime);
 
     
     // actually attaching that content to the new element
     newTaskTitle.appendChild(taskTitleContent);
     newTaskDescription.appendChild(taskDescriptionContent);
+    taskDate.appendChild(dateContent);
 
     //add styling to divs
     newTaskTitle.classList.add('titleSentStyle');
     newTaskDescription.classList.add('descriptionSentStyle');
+    taskDate.classList.add('timeStampStyle');
 
     // placing newly created div on the actual page
         // automatically appends to bottom of body div 👉 document.body.appendChild(newTaskTitle);
         // appends to targeted div 👇
     taskListDiv.appendChild(newTaskTitle);    
     taskListDiv.appendChild(newTaskDescription);    
+    taskListDiv.appendChild(taskDate);    
 
     //clear task input fields
     taskTitle.value = null;
@@ -62,6 +71,9 @@ function createTask() {
 
     //reset focus to title input
     taskTitle.focus();
+
+    
+    console.log(displayDate + ' ' + displayTime);
 
     console.log('enter key worked');
 }

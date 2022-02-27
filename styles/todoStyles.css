@@ -59,7 +59,7 @@ button:hover {
 
 #taskTitle {
   font-family: monospace;
-  color: #DFDF1E;
+  color: #fff;
 }
 
 #taskTitle::-webkit-input-placeholder {
@@ -84,7 +84,7 @@ button:hover {
   font-size: 1rem;
   padding: 1rem;
   margin-bottom: 2rem;
-  color: #DFDF1E;
+  color: lightslategrey;
   border-radius: .3rem;
 }
 
@@ -109,8 +109,8 @@ button:hover {
       flex-basis: 1;
   background-color: #1f1f1f;
   font-size: 1rem;
-  font-weight: 100;
-  color: #DFDF1E;
+  font-weight: 300;
+  color: #fff;
   margin-bottom: .15rem;
 }
 
@@ -120,6 +120,17 @@ button:hover {
   background-color: #1f1f1f;
   font-family: monospace;
   font-size: 1rem;
+  color: lightslategrey;
+  padding-bottom: 1rem;
+  margin-bottom: .25rem;
+}
+
+.timeStampStyle {
+  -ms-flex-preferred-size: 1;
+      flex-basis: 1;
+  background-color: #1f1f1f;
+  font-family: monospace;
+  font-size: .75rem;
   color: lightslategrey;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
