@@ -19,11 +19,11 @@ submitBtn.addEventListener('click', () => {
 
 
 // hit enter to submit task to listSide
-function enterForTask(e) {
+taskTitle.addEventListener('keyup', function(e) {
     if (e.key === 'Enter') {
-        submitBtn.click();
-    } 
-}
+        createTask();
+    }
+});
 
     //🏁 creating a brand new task from scratch in the task column
 function createTask() {
