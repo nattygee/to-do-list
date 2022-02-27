@@ -108,19 +108,19 @@ button:hover {
   -ms-flex-preferred-size: 1;
       flex-basis: 1;
   background-color: #1f1f1f;
-  font-size: 10.72px;
-  font-weight: 700;
-  color: lightslategrey;
+  font-size: 1rem;
+  font-weight: 100;
+  color: #DFDF1E;
   margin-bottom: .15rem;
 }
 
-#descriptionSentInput {
+.descriptionSentStyle {
   -ms-flex-preferred-size: 1;
       flex-basis: 1;
   background-color: #1f1f1f;
   font-family: monospace;
   font-size: 1rem;
-  color: #DFDF1E;
+  color: lightslategrey;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 }
