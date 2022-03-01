@@ -43,11 +43,12 @@ function createTask() {
     let rightColumn = document.createElement('div');
     let titleRow = document.createElement('div');
     let taskBtns = document.createElement('div');
-
-    let taskCheckbox = document.createElement('input');
-    let deleteBtn = document.createElement('button');
-    let editBtn = document.createElement('button');
     
+    let taskCheckbox = document.createElement('input');
+    let deleteBtnDiv = document.createElement('div');
+    let editBtnDiv = document.createElement('div');
+    let deleteBtnImg = document.createElement('img');
+    let editBtnImg = document.createElement('img');
 
     let newTaskTitle = document.createElement('div');
     let newTaskDescription = document.createElement('div');
@@ -57,6 +58,10 @@ function createTask() {
     let taskTitleContent = document.createTextNode(taskTitle.value);
     let taskDescriptionContent = document.createTextNode(taskDescription.value);
     let dateContent = document.createTextNode(displayDate + ' ' + displayTime);
+    editBtnImg.src = "images/edit pencil.svg";
+    deleteBtnImg.src = "images/delete.svg";
+
+
 
     
     // actually attaching that content to the new element
@@ -71,6 +76,9 @@ function createTask() {
     rightColumn.classList.add('contentColumn');
     titleRow.classList.add('titleRowStyle');
     taskBtns.classList.add('taskBtnsDiv');
+    deleteBtnDiv.classList.add('deleteBtnStyle');
+    editBtnDiv.classList.add('editBtnStyle');
+
 
     newTaskTitle.classList.add('titleSentStyle');
     newTaskDescription.classList.add('descriptionSentStyle');
@@ -94,8 +102,10 @@ function createTask() {
             rightColumn.appendChild(titleRow);    
                 titleRow.appendChild(newTaskTitle);
                 titleRow.appendChild(taskBtns);
-                    taskBtns.appendChild(editBtn);
-                    taskBtns.appendChild(deleteBtn);
+                    taskBtns.appendChild(editBtnDiv);
+                        editBtnDiv.appendChild(editBtnImg);
+                    taskBtns.appendChild(deleteBtnDiv);
+                        deleteBtnDiv.appendChild(deleteBtnImg);
             rightColumn.appendChild(newTaskDescription);    
             rightColumn.appendChild(taskDate);    
 

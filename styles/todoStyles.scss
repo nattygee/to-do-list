@@ -85,6 +85,14 @@ body {
 .taskBoxStyle {
     display: flex;
     flex-direction: row;
+    &:hover .editBtnStyle {
+        display: flex;
+        transition: .25s;
+    }
+    &:hover .deleteBtnStyle {
+        display: flex;
+        transition: .25s;
+    }
 }
 
 .contentColumn {
@@ -92,30 +100,75 @@ body {
     flex-basis: 1;
     flex-grow: 1;
     margin-left: 1rem;
-    //background-color: lightslategrey;
+    padding: .5rem .5rem 0 1rem;
+    border-radius: .5rem;
+        &:hover {
+            background-color: rgba($color: rgb(2, 2, 2), $alpha: .15);
+            transition: .25s;
+        }
+}
+
+.checkBoxColumn {
+    padding-top: 1.25rem;
 }
 
 .titleRowStyle {
     display: flex;
     flex-direction: row;
+    margin-bottom: .5rem;
 
 }
 
+.editBtnStyle{
+        cursor: pointer;
+    display: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: .5rem;
+    margin-left: .25rem;
+    padding: .5rem;
+    background-size: cover;
+        &:hover {
+            //display: flex;
+            background-color: rgba($color: rgb(2, 2, 2), $alpha: .25);
+            transition: .25s;
+            img {
+                opacity: .5;
+                transition: .25s;
+            }
+        }
+}
+
+.deleteBtnStyle {
+        cursor: pointer;
+    display: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: .5rem;
+    margin-left: .25rem;
+    padding: .5rem;
+    background-size: cover;
+        &:hover {
+            background-color: rgba($color: rgb(2, 2, 2), $alpha: .25);
+            transition: .25s;
+            img {
+                opacity: .5;
+                transition: .25s;
+            }
+        }
+}
+
 .taskBtnsDiv {
+    display: flex;
     flex-direction: row;
     margin-left: auto;
-        button {
-            height: 1.5rem;
-            width: 1.5rem;
-            background: url("../images/edit pencil.svg") no-repeat scroll 0 0 transparent;
-            //background-image: url("edit pencil.svg");
-        }
 }
 
 .titleSentStyle {
     flex-basis: .5;
-    background-color: #1f1f1f;
+    //background-color: #1f1f1f;
     font-size: 1rem;
+    padding: .75rem 0 .75rem 0;
     font-weight: 300;
     color: #fff;
     margin-bottom: .15rem;
@@ -123,7 +176,7 @@ body {
 
 .descriptionSentStyle {
     flex-basis: 1;
-    background-color: #1f1f1f;
+    //background-color: #1f1f1f;
     font-family: monospace;
     font-size: 1rem;
     color: lightslategrey;
@@ -133,7 +186,7 @@ body {
 
 .timeStampStyle {
     flex-basis: 1;
-    background-color: #1f1f1f;
+    //background-color: #1f1f1f;
     font-family: monospace;
     font-size: .75rem;
     color: lightslategrey;
