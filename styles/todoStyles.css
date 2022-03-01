@@ -114,6 +114,22 @@ body {
           flex-direction: row;
 }
 
+.taskBoxStyle:hover .editBtnStyle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.taskBoxStyle:hover .deleteBtnStyle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
 .contentColumn {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -125,6 +141,18 @@ body {
       -ms-flex-positive: 1;
           flex-grow: 1;
   margin-left: 1rem;
+  padding: .5rem .5rem 0 1rem;
+  border-radius: .5rem;
+}
+
+.contentColumn:hover {
+  background-color: rgba(2, 2, 2, 0.15);
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.checkBoxColumn {
+  padding-top: 1.25rem;
 }
 
 .titleRowStyle {
@@ -135,9 +163,59 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin-bottom: .5rem;
+}
+
+.editBtnStyle {
+  cursor: pointer;
+  display: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: .5rem;
+  margin-left: .25rem;
+  padding: .5rem;
+  background-size: cover;
+}
+
+.editBtnStyle:hover {
+  background-color: rgba(2, 2, 2, 0.25);
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.editBtnStyle:hover img {
+  opacity: .5;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.deleteBtnStyle {
+  cursor: pointer;
+  display: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: .5rem;
+  margin-left: .25rem;
+  padding: .5rem;
+  background-size: cover;
+}
+
+.deleteBtnStyle:hover {
+  background-color: rgba(2, 2, 2, 0.25);
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.deleteBtnStyle:hover img {
+  opacity: .5;
+  -webkit-transition: .25s;
+  transition: .25s;
 }
 
 .taskBtnsDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -145,17 +223,11 @@ body {
   margin-left: auto;
 }
 
-.taskBtnsDiv button {
-  height: 1.5rem;
-  width: 1.5rem;
-  background: url("../images/edit pencil.svg") no-repeat scroll 0 0 transparent;
-}
-
 .titleSentStyle {
   -ms-flex-preferred-size: .5;
       flex-basis: .5;
-  background-color: #1f1f1f;
   font-size: 1rem;
+  padding: .75rem 0 .75rem 0;
   font-weight: 300;
   color: #fff;
   margin-bottom: .15rem;
@@ -164,7 +236,6 @@ body {
 .descriptionSentStyle {
   -ms-flex-preferred-size: 1;
       flex-basis: 1;
-  background-color: #1f1f1f;
   font-family: monospace;
   font-size: 1rem;
   color: lightslategrey;
@@ -175,7 +246,6 @@ body {
 .timeStampStyle {
   -ms-flex-preferred-size: 1;
       flex-basis: 1;
-  background-color: #1f1f1f;
   font-family: monospace;
   font-size: .75rem;
   color: lightslategrey;
