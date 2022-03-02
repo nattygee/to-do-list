@@ -184,6 +184,28 @@ body {
     margin-bottom: .25rem;
 }
 
+// when user is editing tasks
+
+.titleEditStyle {
+    flex-grow: 1;
+    background-color: #080808;
+    font-size: 1rem;
+    padding: .75rem 0 .75rem 0;
+    font-weight: 300;
+    color: rgb(255, 243, 81);
+    margin-bottom: .15rem;
+}
+
+.descriptionEditStyle {
+    flex-basis: 1;
+    background-color: #080808;
+    font-family: monospace;
+    font-size: 1rem;
+    color: rgb(255, 243, 81);
+    padding-bottom: 1rem;
+    margin-bottom: .25rem;
+}
+
 .timeStampStyle {
     flex-basis: 1;
     //background-color: #1f1f1f;
@@ -209,7 +231,6 @@ body {
     flex-grow: 1;
     //padding: 1rem;
 }
-
 
 .infoSection {
     //background-color: #dfc5c5;
