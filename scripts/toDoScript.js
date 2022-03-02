@@ -61,9 +61,6 @@ function createTask() {
     editBtnImg.src = "images/edit pencil.svg";
     deleteBtnImg.src = "images/delete.svg";
 
-
-
-    
     // actually attaching that content to the new element
     taskCheckbox.appendChild(leftColumn);
     newTaskTitle.appendChild(taskTitleContent);
@@ -101,15 +98,62 @@ function createTask() {
             
             rightColumn.appendChild(titleRow);    
                 titleRow.appendChild(newTaskTitle);
+                    newTaskTitle.setAttribute("contenteditable", "false");
                 titleRow.appendChild(taskBtns);
                     taskBtns.appendChild(editBtnDiv);
                         editBtnDiv.appendChild(editBtnImg);
                     taskBtns.appendChild(deleteBtnDiv);
                         deleteBtnDiv.appendChild(deleteBtnImg);
-            rightColumn.appendChild(newTaskDescription);    
+            rightColumn.appendChild(newTaskDescription); 
+                newTaskDescription.setAttribute("contenteditable", "false");  
             rightColumn.appendChild(taskDate);    
 
-    
+    // rig edit button
+    editBtnDiv.addEventListener('click', function() {
+        // making title and description editable
+        if (newTaskTitle.getAttribute("contenteditable") === "false") {
+            newTaskTitle.setAttribute("contenteditable", "true");
+            newTaskDescription.setAttribute("contenteditable", "true");
+
+            // attributes to make it more obvious that edit feature has been activated
+            newTaskTitle.focus();
+            newTaskTitle.classList.replace('titleSentStyle', 'titleEditStyle');
+            newTaskDescription.classList.replace('descriptionSentStyle', 'descriptionEditStyle');
+
+            //update edit button image
+            editBtnImg.src = "images/confirmBtn.svg";
+
+        } else if (newTaskTitle.getAttribute("contenteditable") === "true") {
+            // turning off editability
+            newTaskTitle.setAttribute("contenteditable", "false");
+            newTaskDescription.setAttribute("contenteditable", "false");
+            
+            // resetting to non-editable style
+            newTaskTitle.classList.replace('titleEditStyle', 'titleSentStyle');
+            newTaskDescription.classList.replace('descriptionEditStyle', 'descriptionSentStyle');
+            
+            //update edit button image
+            editBtnImg.src = "images/edit pencil.svg";
+            
+        }
+        
+
+        /* // attributes to make it more obvious that edit feature has been activated
+        newTaskTitle.focus();
+        newTaskTitle.classList.replace('titleSentStyle', 'titleEditStyle');
+        newTaskDescription.classList.replace('descriptionSentStyle', 'descriptionEditStyle');
+                            
+            editBtnDiv.addEventListener('click', function() {
+                // turning off editability
+                newTaskTitle.setAttribute("contenteditable", "false");
+                newTaskDescription.setAttribute("contenteditable", "false");
+                
+                // resetting to non-editable style
+                newTaskTitle.classList.replace('titleEditStyle', 'titleSentStyle');
+                newTaskDescription.classList.replace('descriptionEditStyle', 'descriptionSentStyle');
+            }) */
+    });    
+
     //clear task input fields
     taskTitle.value = null;
     taskDescription.value = null;
@@ -122,6 +166,10 @@ function createTask() {
 
     console.log('enter key worked');
 }
+
+// 🏁 make task and description divs editable on button click
+
+
 // original way i tried to manually display tasks👇 (found out after that I needed to do it dynamically, like the above ☝️)
 /*function sendTaskOver() {
     //translate task input text to task list div
