@@ -234,8 +234,9 @@ body {
 }
 
 .descriptionSentStyle {
-  -ms-flex-preferred-size: 1;
-      flex-basis: 1;
+  -webkit-box-flex: .5;
+      -ms-flex-positive: .5;
+          flex-grow: .5;
   font-family: monospace;
   font-size: 1rem;
   color: lightslategrey;
@@ -256,8 +257,9 @@ body {
 }
 
 .descriptionEditStyle {
-  -ms-flex-preferred-size: 1;
-      flex-basis: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   background-color: #080808;
   font-family: monospace;
   font-size: 1rem;

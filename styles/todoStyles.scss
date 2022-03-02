@@ -175,7 +175,7 @@ body {
 }
 
 .descriptionSentStyle {
-    flex-basis: 1;
+    flex-grow: .5;
     //background-color: #1f1f1f;
     font-family: monospace;
     font-size: 1rem;
@@ -197,7 +197,7 @@ body {
 }
 
 .descriptionEditStyle {
-    flex-basis: 1;
+    flex-grow: 1;
     background-color: #080808;
     font-family: monospace;
     font-size: 1rem;

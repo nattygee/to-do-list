@@ -122,6 +122,9 @@ function createTask() {
 
             //update edit button image
             editBtnImg.src = "images/confirmBtn.svg";
+            
+            newTaskTitle.style.transition = "all .4s";
+            newTaskDescription.style.transition = "all .4s";
 
         } else if (newTaskTitle.getAttribute("contenteditable") === "true") {
             // turning off editability
@@ -153,6 +156,12 @@ function createTask() {
                 newTaskDescription.classList.replace('descriptionEditStyle', 'descriptionSentStyle');
             }) */
     });    
+    
+    // rig delete button
+    deleteBtnDiv.addEventListener('click', function() {
+        taskBox.remove();
+        taskBox.style.transition = "2s";
+    });
 
     //clear task input fields
     taskTitle.value = null;
