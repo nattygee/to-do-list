@@ -10,6 +10,20 @@ var today = new Date();
 var displayDate = today.getMonth() + 1 + '/' + today.getDate() + '/' + today.getFullYear();
 var displayTime = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
 
+//const LOCAL_STORAGE_TASKS_KEY;
+var savedTasksString = JSON.stringify(taskListDiv.outerHTML);
+var retrievedTaskStorage = localStorage.getItem("taskListz");
+
+function saveAndCreate() {
+    createTask();
+    save();
+}
+
+function save() {
+    localStorage.setItem("taskListz", taskListDiv.outerHTML);
+}
+//taskListDiv
+
 // 🥳 this is pretty helpful for finding out the 'key' values of each keyboard key/variation
 window.addEventListener('keydown', x => {
     console.log(x);
@@ -17,7 +31,7 @@ window.addEventListener('keydown', x => {
 
 //listen for CTA button press
 submitBtn.addEventListener('click', () => {
-    createTask();
+    saveAndCreate();
     console.log('offs');
 });
 
@@ -174,6 +188,9 @@ function createTask() {
     console.log(displayDate + ' ' + displayTime);
 
     console.log('enter key worked');
+   
+    //committed created elements to storage
+   
 }
 
 // 🏁 make task and description divs editable on button click
