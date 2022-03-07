@@ -6,13 +6,20 @@ var taskListDiv = document.getElementById('theListSide');
 var taskTitleSent = document.getElementById('titleSentInput');
 var taskDescriptionSent = document.getElementById('descriptionSentInput');
 
+var deleteStorageBtn = document.getElementById('clearStorage');
+
 var today = new Date();
 var displayDate = today.getMonth() + 1 + '/' + today.getDate() + '/' + today.getFullYear();
 var displayTime = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
 
-//const LOCAL_STORAGE_TASKS_KEY;
-var savedTasksString = JSON.stringify(taskListDiv.outerHTML);
-var retrievedTaskStorage = localStorage.getItem("taskListz");
+window.onload = function() {
+    let retrievedTaskStorage = localStorage.getItem("taskListz");
+    taskListDiv.innerHTML = retrievedTaskStorage;
+}
+
+deleteStorageBtn.addEventListener('click', function() {
+    localStorage.removeItem("taskListz");
+});
 
 function saveAndCreate() {
     createTask();
@@ -20,7 +27,12 @@ function saveAndCreate() {
 }
 
 function save() {
-    localStorage.setItem("taskListz", taskListDiv.outerHTML);
+    // get existing
+    //let existingTaskStorage = localStorage.getItem("taskListz");
+    // get new (in taskListDiv)
+    let newlyAddedTasks = taskListDiv.innerHTML;
+    // set new local storage value
+    localStorage.setItem("taskListz", newlyAddedTasks);
 }
 //taskListDiv
 
