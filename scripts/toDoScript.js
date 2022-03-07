@@ -6,8 +6,10 @@ var taskListDiv = document.getElementById('theListSide');
 var taskTitleSent = document.getElementById('titleSentInput');
 var taskDescriptionSent = document.getElementById('descriptionSentInput');
 
-var deleteStorageBtn = document.getElementById('clearStorage');
+//var editBtnDiv = document.createElement('div');
 
+var deleteStorageBtn = document.getElementById('clearStorage');
+   
 var today = new Date();
 var displayDate = today.getMonth() + 1 + '/' + today.getDate() + '/' + today.getFullYear();
 var displayTime = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
@@ -186,7 +188,7 @@ function createTask() {
     // rig delete button
     deleteBtnDiv.addEventListener('click', function() {
         taskBox.remove();
-        taskBox.style.transition = "2s";
+        
     });
 
     //clear task input fields
