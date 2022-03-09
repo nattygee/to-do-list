@@ -1,3 +1,10 @@
+window.onload = function() {
+    let retrievedTaskStorage = localStorage.getItem("taskListz");
+    taskListDiv.innerHTML = retrievedTaskStorage;
+    elBtn.click();
+}
+//let newEditBtn = Array.from(document.getElementsByClassName('editBtnStyle'));
+
 var taskTitle = document.getElementById('taskTitle');
 var taskDescription = document.getElementById('taskDescription');
 var submitBtn = document.getElementById('primaryCTA');
@@ -9,15 +16,42 @@ var taskDescriptionSent = document.getElementById('descriptionSentInput');
 //var editBtnDiv = document.createElement('div');
 
 var deleteStorageBtn = document.getElementById('clearStorage');
-   
+
+// note that i had to use getElementsByClassName for whatever reason 👇👇👇
+var elBtn = document.getElementById('addBackEL');
+elBtn.addEventListener('click', function(event) {
+    // define elements by class name
+    let newEditBtn = document.getElementsByClassName('editBtnStyle');
+    //let firstEditBtn = newEditBtn[1];
+    // figure out the function you want to perform on each
+    var runFunction = function() {
+            /* if (document.querySelector('div.titleSentStyle').getAttribute("contenteditable") === "false") {
+                document.querySelector('div.titleSentStyle').setAttribute("contenteditable", "true");
+            }  else { 
+                alert('oh no');
+            }; */
+            console.log('hey Woo');
+    };
+
+    //loop the function to each element in the array
+    for (var i = 0; i < newEditBtn.length; i++) {
+        newEditBtn[i].addEventListener('click', runFunction);
+    }
+    /* firstEditBtn.addEventListener('click', function() {
+        if (document.querySelector('div.titleSentStyle').getAttribute("contenteditable") === "false") {
+            document.getElementsByClassName('titleSentStyle')[1].setAttribute("contenteditable", "true");
+        }
+        console.log('hey');
+    }); */
+});
+
 var today = new Date();
 var displayDate = today.getMonth() + 1 + '/' + today.getDate() + '/' + today.getFullYear();
 var displayTime = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
 
-window.onload = function() {
-    let retrievedTaskStorage = localStorage.getItem("taskListz");
-    taskListDiv.innerHTML = retrievedTaskStorage;
-}
+// define variables for retrieved task title and description classes (so we can target in new event listener)
+var newTaskTitleLS = document.getElementsByClassName('titleSentStyle');
+var newTaskDescriptionLS = document.getElementsByClassName('descriptionSentStyle');
 
 deleteStorageBtn.addEventListener('click', function() {
     localStorage.removeItem("taskListz");
@@ -131,12 +165,13 @@ function createTask() {
                     taskBtns.appendChild(editBtnDiv);
                         editBtnDiv.appendChild(editBtnImg);
                     taskBtns.appendChild(deleteBtnDiv);
+                        //deleteBtnDiv.setAttribute("onclick", "removeTheDiv(taskBox)");
                         deleteBtnDiv.appendChild(deleteBtnImg);
             rightColumn.appendChild(newTaskDescription); 
                 newTaskDescription.setAttribute("contenteditable", "false");  
             rightColumn.appendChild(taskDate);    
 
-    // rig edit button
+
     editBtnDiv.addEventListener('click', function() {
         // making title and description editable
         if (newTaskTitle.getAttribute("contenteditable") === "false") {
@@ -202,7 +237,6 @@ function createTask() {
     console.log(displayDate + ' ' + displayTime);
 
     console.log('enter key worked');
-   
     //committed created elements to storage
    
 }
