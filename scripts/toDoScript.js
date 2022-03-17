@@ -13,6 +13,7 @@ var taskListDiv = document.getElementById('theListSide');
 var taskTitleSent = document.getElementById('titleSentInput');
 var taskDescriptionSent = document.getElementById('descriptionSentInput');
 
+const taskTemplate = document.getElementById('task-template');
 //var editBtnDiv = document.createElement('div');
 
 var deleteStorageBtn = document.getElementById('clearStorage');
