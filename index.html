@@ -54,6 +54,30 @@
             </div>
         </div>
     </div>
+<template id="task-template">
+    <div class="taskBoxStyle">
+
+        <div class="checkBoxColumn">
+            <input type="checkbox">
+        </div>
+
+        <div class="contentColumn">
+            <div class="titleRowStyle">
+                <div class="titleSentStyle" contenteditable="false"></div>
+                    
+                    <div class="taskBtnsDiv">
+                        <div class="editBtnStyle">
+                            <img src="images/edit pencil.svg"></div>
+                            <div class="deleteBtnStyle">
+                                <img src="images/delete.svg"></div>
+                            </div>
+                        </div>
+
+            <div class="descriptionSentStyle" contenteditable="false"></div>
+            <div class="timeStampStyle"></div>
+        </div>
+    </div>
+</template>
 <!--put this down here because i was running into a "cannot read properties of null" error - apparently it was just an ordering issue from when the script file was at the top...-->
 <script src="scripts/toDoScript.js"></script>
 </body>
